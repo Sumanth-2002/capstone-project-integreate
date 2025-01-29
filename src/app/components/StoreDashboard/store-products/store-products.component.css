@@ -1,0 +1,276 @@
+/* Main Content */
+.main-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 85%;
+    position: fixed;
+    align-items: center;
+    padding: 20px;
+    top: 60px; /* Match the height of the header */
+    left: 250px;
+    background-color: #0093E9;
+    background-image: linear-gradient(135deg, #6cc9fff2 0%, #a0eee5 59%);
+    height: calc(100vh - 6px);
+    overflow-y: auto;
+}
+.content-div{
+    width: 80%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    padding-bottom: 0px;
+    overflow-y: auto;
+}
+
+/* Search Bar */
+.search-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-bar {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Products Table */
+.table-container {
+    max-height: calc(100vh - 300px); /* Adjust based on your layout */
+    overflow-y: auto; /* Enable scrolling for the table body */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Products Table */
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.products-table th,
+.products-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.products-table th {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    /* top: 0; Stick the header to the top of the table container */
+    /* z-index: 10; Ensure the header stays above the table rows */
+}
+
+.products-table tr:hover td {
+    transform: scale(1.1); 
+    transition: transform 0.2s ease;
+    padding: 12px; 
+}
+
+tbody tr:nth-child(even) {
+    background-color: #8ddef9;
+}
+
+/* Request Button */
+.request-button {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    /* Red color for request button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.request-button:hover {
+    background-color: #c82333;
+    /* Darker red on hover */
+}
+
+/* Requested Status */
+.requested-status {
+    color: #dc3545;
+    /* Red color for "Requested" status */
+    font-weight: bold;
+}
+
+/* Request Form (Pop-up) */
+.request-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.send-request-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.send-request-button:hover {
+    background-color: #218838;
+}
+
+.pagination-limit-container {
+    margin-bottom: 1rem;
+}
+
+.pagination-limit-container label {
+    margin-right: 0.5rem;
+}
+
+.pagination-limit-container select {
+    padding: 0.25rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+th {
+    cursor: pointer;
+}
+
+th.sorted-asc::after {
+    content: ' ▲';
+}
+
+th.sorted-desc::after {
+    content: ' ▼';
+}
+
+
+/* Container for Pagination Limits and Pagination Controls */
+.pagination-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Pagination Limits Dropdown */
+.pagination-limit-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.pagination-limit-container label {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.pagination-limit-container select {
+    padding: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    /* Align pagination controls vertically */
+}
+
+.pagination-controls .ngx-pagination {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pagination-controls .ngx-pagination li {
+    display: inline-block;
+}
+
+.pagination-controls .ngx-pagination a {
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-controls .ngx-pagination a:hover {
+    background-color: #007bff;
+    color: #8ec5ff;
+    border-color: #007bff;
+}
+
+.pagination-controls .ngx-pagination .current {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}

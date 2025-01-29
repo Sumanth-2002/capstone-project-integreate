@@ -1,0 +1,359 @@
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #1C1678;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 96%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav a {
+    color: #fff;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+/* Add padding to the body to prevent content from being hidden behind the fixed header */
+body {
+    padding-top: 70px;
+    padding: 0%;
+    /* Adjust this value based on the header height */
+}
+
+/* Section Styles */
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #77ecde 100%);
+    /* background: linear-gradient(to right, #8576FF, #A3FFD6); */
+    padding-top: 60px;
+    padding-bottom: 30px;
+    height: 100vh;
+    /* Add padding to account for the fixed header */
+}
+
+/* Content Container */
+.content {
+    display: flex; /* Use Flexbox to arrange children side by side */
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Space out the text and image */
+    gap: 2rem; /* Add space between the text and image */
+    width: 100%; /* Ensure the content takes full width */
+    max-width: 1200px; /* Optional: Limit the maximum width */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 0 2rem; /* Add padding for better spacing */
+}
+
+/* Text Section Styles */
+.text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    animation: slideIn 0.8s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.text h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: #fff;
+    border-radius: 2px;
+    animation: expandLine 0.8s ease-out forwards;
+}
+
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100px;
+    }
+}
+
+/* Register Button Styles */
+.register-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1C1678;
+    background: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.register-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(28, 22, 120, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.register-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: #f8f9fa;
+}
+
+.register-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.register-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+    flex: 1;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.image::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 10%;
+    width: 80%;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 70%);
+    filter: blur(5px);
+    z-index: -1;
+}
+
+/* About Section */
+.about {
+    background-color: #f8f9fa;
+    padding: 2rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about h1 {
+    font-size: 2.8rem;
+    color: #1C1678;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.about h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 6px;
+    background: linear-gradient(90deg, #0093E9, #77ecde);
+    border-radius: 8px;
+}
+
+.about h2 {
+    font-size: 1.8rem;
+    color: #2d3748;
+    margin: 2rem 0 1rem;
+}
+
+.about p {
+    /* max-width: 800px; */
+    margin: auto;
+    line-height: 1.8;
+    color: #4a5568;
+    font-size: 1.1rem;
+}
+
+.about strong {
+    color: #1C1678;
+}
+
+.about ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: auto;
+}
+
+.about li {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.about li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #0093E9;
+    font-weight: bold;
+}
+
+/* Testimonial Section */
+.testimonial {
+    background: linear-gradient(160deg, #0093E9 0%, #77ecde 100%);
+    padding: 2rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 4rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.testimonial h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 6px;
+    background: linear-gradient(90deg, #1b04a0, #6f0490);
+    border-radius: 8px;
+}
+
+.review {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 1rem auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.review p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2d3748;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.review span {
+    display: block;
+    font-weight: 600;
+    color: #1C1678;
+    font-size: 1rem;
+    text-align: right;
+}
+
+.review::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 4rem;
+    color: #050099;
+    font-family: Georgia, serif;
+}
+
+/* Footer Styles */
+.footer {
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
